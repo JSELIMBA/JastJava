@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Jast Java</string>
+    <string name="text_quantity">QUANTITY</string>
+    <string name="quantity">2</string>
+    <string name="text_button">ORDER</string>
+    <string name="button_increment">+</string>
+    <string name="button_decrement">-</string>
+    <string name="text_price">ORDER SUMMARY</string>
+    <string name="price">10</string>
+    <string name="toppings">TOPPINGS</string>
+    <string name="wipped_cream">Wopped cream</string>
+    <string name="chocolate">Chocolate</string>
+</resources>
