@@ -10,6 +10,8 @@ package com.example.android.jastjava;
 
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -64,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
             price += chocolatePrice;
         }
 
-        String priceMessage = createOrderSummary(price, quantity, hasWippedCream, hasChocolate, name);
-        displayMessage(priceMessage);
+        createOrderSummary(price, quantity, hasWippedCream, hasChocolate, name);
+
     }
 
     /**
@@ -118,13 +120,6 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + number);
     }
 
-    /**
-     * This method displays the given text on the screen.
-     */
-    private void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
-    }
 
     /**
      * Calculates the price of the order based on the current quantity.
@@ -141,17 +136,26 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Create finali order summery
      */
-    public String createOrderSummary(int price, int quantity, boolean hasWhippedCream, boolean hasChocolate, String name) {
+    public void createOrderSummary(int price, int quantity, boolean hasWhippedCream, boolean hasChocolate, String name) {
 
 
         int totalPrice = calculatePrice(quantity, price);
 
-        String message = "Name: " + name;
-        message += "\nAdd Wipped Cream? " + hasWhippedCream;
-        message += "\nAdd Chocolate? " + hasChocolate;
-        message += "\nQuantity: " + quantity;
-        message += "\nTotal: $" + totalPrice;
-        message += "\nThank You!";
-        return message;
+        String message = "\n" + getString(R.string.name) + name;
+        message += "\n" + getString(R.string.add_wipped_cream) + hasWhippedCream;
+        message += "\n" + getString(R.string.add_chocolate) + hasChocolate;
+        message += "\n" + getString(R.string.text_quantity_message) + quantity;
+        message += "\n" + getString(R.string.total) + totalPrice;
+        message += "\n" + getString(R.string.thanckyou);
+
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_SUBJECT , "JustJava order for: " + name);
+        intent.putExtra(Intent.EXTRA_TEXT , message);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+
     }
 }

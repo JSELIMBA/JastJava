@@ -8,6 +8,13 @@
     <string name="text_price">ORDER SUMMARY</string>
     <string name="price">10</string>
     <string name="toppings">TOPPINGS</string>
-    <string name="wipped_cream">Wopped cream</string>
+    <string name="wipped_cream">Wipped cream</string>
     <string name="chocolate">Chocolate</string>
+    <string name="hint">Name</string>
+    <string name="add_wipped_cream">Add Wipped Cream? </string>
+    <string name="add_chocolate">Add Chocolate? </string>
+    <string name="total">Total: $</string>
+    <string name="thanckyou">Thank You!</string>
+    <string name="name">"Name: "</string>
+    <string name="text_quantity_message">Quantiti: </string>
 </resources>
