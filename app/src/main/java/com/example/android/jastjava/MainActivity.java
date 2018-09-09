@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     public void increment(View view) {
 
         Context context = getApplicationContext();
-        CharSequence text = "თქვენ შეგიძიათ შეუკვეთოთ მაქსიმუმ 100 ყავა";
+        CharSequence text = getString(R.string.max_quantity);
         int duration = Toast.LENGTH_SHORT;
 
         if ((quantity + 1) > 100) {
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
     public void decrement(View view) {
 
         Context context = getApplicationContext();
-        CharSequence text = "თქვენ შეგიძიათ შეუკვეთოთ მინიმუმ 1 ყავა";
+        CharSequence text = getString(R.string.min_quantity);
         int duration = Toast.LENGTH_SHORT;
 
 
@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
-        intent.putExtra(Intent.EXTRA_SUBJECT , "JustJava order for: " + name);
+        intent.putExtra(Intent.EXTRA_SUBJECT , getString(R.string.java_order_subject) + name);
         intent.putExtra(Intent.EXTRA_TEXT , message);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);

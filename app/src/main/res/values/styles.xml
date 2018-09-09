@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Custom Style. -->
+    <style name="StyleTextView">
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
 </resources>

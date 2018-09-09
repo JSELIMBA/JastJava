@@ -17,4 +17,7 @@
     <string name="thanckyou">Thank You!</string>
     <string name="name">"Name: "</string>
     <string name="text_quantity_message">Quantiti: </string>
+    <string name="min_quantity">You can order at least 1 coffee!</string>
+    <string name="max_quantity">You can order a maximum of 100 coffee!</string>
+    <string name="java_order_subject">JustJava order for: </string>
 </resources>
